@@ -588,8 +588,8 @@ type EvalResult = {
 
 function TryItNow() {
   const [prompt, setPrompt] = useState(PRESET_PROMPTS[0].value);
-  const [userId, setUserId] = useState("alice");
-  const [org, setOrg] = useState("org_a");
+  const [userId, setUserId] = useState("sandbox_user_01");
+  const [org, setOrg] = useState("sandbox");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<EvalResult | null>(null);
   const [error, setError] = useState<string | null>(null);
