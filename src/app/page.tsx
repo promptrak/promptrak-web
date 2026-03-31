@@ -288,11 +288,12 @@ function HomepageEvaluator() {
   }[result?.action ?? ""] ?? { bg: "bg-zinc-800 border-zinc-700", text: "text-zinc-300", label: result?.action?.toUpperCase() ?? "" };
 
   return (
-    <section className="container pb-20">
-      <motion.div
-        {...rise}
-        className="mx-auto max-w-3xl rounded-2xl border border-zinc-700 bg-zinc-900 overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)]"
-      >
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+      className="rounded-2xl border border-zinc-700 bg-zinc-900 overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)]"
+    >
         {/* Header */}
         <div className="px-6 py-5 border-b border-zinc-800">
           <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-teal-500 mb-1">Live sandbox</p>
@@ -357,7 +358,6 @@ function HomepageEvaluator() {
           )}
         </div>
       </motion.div>
-    </section>
   );
 }
 
@@ -437,12 +437,9 @@ export default function Home() {
           </div>
 
           {/* Right */}
-          <LiveDecisionFeed />
+          <HomepageEvaluator />
         </div>
       </section>
-
-      {/* ── Homepage Evaluator ───────────────────────────────────────────── */}
-      <HomepageEvaluator />
 
       {/* ── Pipeline animation ───────────────────────────────────────────── */}
       <section className="container pb-28">
